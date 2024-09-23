@@ -8,10 +8,10 @@ class NewsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  BlocProvider(
-      create: (context) => NewsCubit(),
+      create: (context) => NewsCubit()..fetchBusinessNews()..fetchSportsNews()..fetchEntertainmentNews(),
       child: BlocConsumer<NewsCubit, NewsState>(
         listener: (context, state) {
-          // TODO: implement listener
+          
         },
         builder: (context, state) {
           var cubit=NewsCubit.get(context);
