@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/feautres/home/presentation/managers/news_cubit/cubit/news_cubit.dart';
 import 'package:news_app/feautres/home/presentation/views/widgets/build_article_widget.dart';
@@ -21,7 +19,7 @@ class BussinessView extends StatelessWidget {
         }else if (state is NewsSuccessBusinessState){
            var data=state.news;
           return ListView.separated(
-            physics: BouncingScrollPhysics(),
+            physics:const BouncingScrollPhysics(),
             itemBuilder: (context,index){
               var articls=data[index];
             return BuildArticleWidget(imageUrl:articls.imageUrl.toString(), title: articls.title.toString(), pubDate: articls.pubDate.toString());

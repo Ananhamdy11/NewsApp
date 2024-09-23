@@ -1,16 +1,18 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/core/helper/dio_helper.dart';
 import 'package:news_app/feautres/home/data/models/news_model.dart';
 import 'package:news_app/feautres/home/presentation/views/bussines/buissens_view.dart';
 import 'package:news_app/feautres/home/presentation/views/entertianment/entertain_view.dart';
-import 'package:news_app/feautres/home/presentation/views/settings/settings_view.dart';
 import 'package:news_app/feautres/home/presentation/views/sports/sports_view.dart';
 
 part 'news_state.dart';
 
 class NewsCubit extends Cubit<NewsState> {
+
+
+
+
   final Dio dio=Dio();
   static NewsModel newsModel= const NewsModel();
   final String apiKey = 'pub_532818c97feecfb722c33960bfa62b71be2c2';
@@ -23,7 +25,6 @@ int currentIndex=0;
   BottomNavigationBarItem(icon: Icon(Icons.business),label: 'Business'),
   BottomNavigationBarItem(icon: Icon(Icons.sports),label: 'Sports'),
   BottomNavigationBarItem(icon: Icon(Icons.movie_creation),label: 'Entertainment'),
-  BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings'),
 
  ];
 
@@ -31,7 +32,6 @@ List <Widget> screens=[
 const BussinessView(),
 const SportsView(),
 const EntertainView(),
-const SettingsView(),
 ];
  void changeIndexBottomBar(int index ) {
   currentIndex=index;
@@ -125,6 +125,10 @@ emit(NewsLoadingEntertainState());
   emit(NewsFailureEntertainState(e.toString()));
 }
 }
-
+bool isdark=false;
+void changeAppMode(){
+  isdark=!isdark;
+  emit(NewsAppModeState());
+}
 
 }

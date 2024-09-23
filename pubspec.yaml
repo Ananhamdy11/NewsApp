@@ -35,6 +35,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  hexcolor: ^3.0.1
+  shared_preferences: ^2.3.2
 
 dev_dependencies:
   flutter_lints: ^3.0.0

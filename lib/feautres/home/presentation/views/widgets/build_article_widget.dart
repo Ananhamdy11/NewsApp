@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BuildArticleWidget extends StatelessWidget {
-   BuildArticleWidget({
+  const BuildArticleWidget({
     super.key, required this.imageUrl, required this.title, required this.pubDate,
     
   });
@@ -28,7 +28,7 @@ final String pubDate;
            ),
            const SizedBox(width: 20,),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 height: 120,
                 child:  Column(
                   mainAxisSize: MainAxisSize.min,
@@ -37,12 +37,9 @@ final String pubDate;
                   children: [
                     Expanded(
                       child: Text(title,
-                      maxLines: 4,
+                      maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style:const TextStyle(
-                        fontSize: 20,
-                                    
-                      ),),
+                      style:Theme.of(context).textTheme.bodyText1),
                     ),
                    Text(pubDate,style:const TextStyle(
                     color:Colors.grey

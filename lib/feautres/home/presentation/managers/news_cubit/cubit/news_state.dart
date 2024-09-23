@@ -36,3 +36,5 @@ final class NewsFailureSportsState extends NewsState {
 }
 
 final class NewsLoadingSportsState extends NewsState {}
+
+final class NewsAppModeState extends NewsState {}

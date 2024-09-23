@@ -18,7 +18,7 @@ class SportsView extends StatelessWidget {
         }else if (state is NewsSuccessSportsState){
            var data=state.news;
           return ListView.separated(
-            physics: BouncingScrollPhysics(),
+            physics:const BouncingScrollPhysics(),
             itemBuilder: (context,index){
               var articls=data[index];
             return BuildArticleWidget(imageUrl:articls.imageUrl.toString(), title: articls.title.toString(), pubDate: articls.pubDate.toString());

@@ -23,7 +23,13 @@ class NewsView extends StatelessWidget {
                     IconButton(
                       onPressed: (){}, 
                     icon:const Icon(Icons.search)
-                    )
+                    ),
+                    IconButton(
+                      onPressed: (){
+                        NewsCubit.get(context).changeAppMode();
+                      }, 
+                    icon:const Icon(Icons.brightness_4_outlined)
+                    ),
                   ],
                 ),
                 body: cubit.screens[cubit.currentIndex],
